@@ -12,7 +12,11 @@ for (const [spec,target] of [['openapi.yaml','index.html'],['corgly.yaml','corgl
   process.stdout.write(result.stdout);process.stderr.write(result.stderr);
   if(result.status!==0)process.exit(result.status||1);
   const file=`public/redoc/${target}`;
-  writeFileSync(file,readFileSync(file,'utf8').replace('https://cdn.redocly.com/redoc/v2.5.1/bundles/redoc.standalone.js','/vendor/redoc.standalone.js'));
+  writeFileSync(file,readFileSync(file,'utf8')
+    .replace('https://cdn.redocly.com/redoc/v2.5.1/bundles/redoc.standalone.js','/vendor/redoc.standalone.js')
+    // Avoid SSR/client hydration mismatch for relative servers and dynamic viewport.
+    .replace('Redoc.hydrate(__redoc_state, container);',
+      "container.replaceChildren(); Redoc.init(__redoc_state.spec.data, __redoc_state.options, container);"));
 }
 mkdirSync('dist/server',{recursive:true});
 const assets={};
