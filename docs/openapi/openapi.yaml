@@ -1,0 +1,612 @@
+openapi: 3.0.3
+info:
+  title: Prometheus Query API Laboratory
+  version: 1.0.0
+  description: Five native Prometheus 3.5.0 POST interfaces. The hosted server is a replay sandbox, not
+    a PromQL engine. Use the exact request examples. Basic credentials labreader / prometheus-lab-demo
+    are public demo credentials. Native upstream captures were taken on 127.0.0.1:9095 without authentication;
+    BasicAuth belongs to the laboratory gateway. Gateway 401 is JSON. Native 503 is documented but was
+    not fault-injected.
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    name: SWPD laboratory
+servers:
+- url: /sandbox/prometheus
+  description: Same-origin training sandbox
+security:
+- BasicAuth: []
+paths:
+  /api/v1/query:
+    post:
+      operationId: query
+      summary: Evaluate an instant query
+      tags:
+      - Queries
+      description: Evaluate an instant query using the documented values. The replay response was captured
+        from native Prometheus 3.5.0. POST accepts URL-encoded fields; no path parameters are needed.
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/QueryRequest'
+            example: &id002
+              query: vector(1)
+              time: '1791187200'
+      responses:
+        '200':
+          description: Native capture replayed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryResponse'
+              example: &id001
+                status: success
+                data:
+                  resultType: vector
+                  result:
+                  - metric: {}
+                    value:
+                    - 1791187200
+                    - '1'
+        '400':
+          description: Invalid or missing inputs.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                status: error
+                errorType: bad_data
+                error: 'invalid parameter "query": 1:5: parse error: unclosed left parenthesis'
+        '401':
+          description: Missing or invalid laboratory credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unsupported sandbox input or failed query execution.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          description: Query timeout or upstream unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-codeSamples:
+      - lang: Shell
+        label: curl local gateway
+        source: "curl --fail-with-body -sS \\\n  -u 'labreader:prometheus-lab-demo' \\\n  'http://127.0.0.1:8085/sandbox/prometheus/api/v1/query'\
+          \ \\\n  --data-urlencode 'query=vector(1)' \\\n  --data-urlencode 'time=1791187200'\n"
+  /api/v1/query_range:
+    post:
+      operationId: query_range
+      summary: Evaluate a range query
+      tags:
+      - Queries
+      description: Evaluate a range query using the documented values. The replay response was captured
+        from native Prometheus 3.5.0. POST accepts URL-encoded fields; no path parameters are needed.
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/RangeRequest'
+            example: &id004
+              query: vector(1)
+              start: '1791187200'
+              end: '1791187230'
+              step: 15s
+      responses:
+        '200':
+          description: Native capture replayed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RangeResponse'
+              example: &id003
+                status: success
+                data:
+                  resultType: matrix
+                  result:
+                  - metric: {}
+                    values:
+                    - - 1791187200
+                      - '1'
+                    - - 1791187215
+                      - '1'
+                    - - 1791187230
+                      - '1'
+        '400':
+          description: Invalid or missing inputs.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Missing or invalid laboratory credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unsupported sandbox input or failed query execution.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          description: Query timeout or upstream unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-codeSamples:
+      - lang: Shell
+        label: curl local gateway
+        source: "curl --fail-with-body -sS \\\n  -u 'labreader:prometheus-lab-demo' \\\n  'http://127.0.0.1:8085/sandbox/prometheus/api/v1/query_range'\
+          \ \\\n  --data-urlencode 'query=vector(1)' \\\n  --data-urlencode 'start=1791187200' \\\n  --data-urlencode\
+          \ 'end=1791187230' \\\n  --data-urlencode 'step=15s'\n"
+  /api/v1/series:
+    post:
+      operationId: series
+      summary: Find matching series
+      tags:
+      - Metadata
+      description: Find matching series using the documented values. The replay response was captured
+        from native Prometheus 3.5.0. POST accepts URL-encoded fields; no path parameters are needed.
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SeriesRequest'
+            example: &id006
+              match[]:
+              - up{job="prometheus"}
+            encoding:
+              match[]:
+                style: form
+                explode: true
+      responses:
+        '200':
+          description: Native capture replayed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeriesResponse'
+              example: &id005
+                status: success
+                data:
+                - __name__: up
+                  instance: 127.0.0.1:9095
+                  job: prometheus
+        '400':
+          description: Invalid or missing inputs.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Missing or invalid laboratory credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unsupported sandbox input or failed query execution.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          description: Query timeout or upstream unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-codeSamples:
+      - lang: Shell
+        label: curl local gateway
+        source: "curl --fail-with-body -sS \\\n  -u 'labreader:prometheus-lab-demo' \\\n  'http://127.0.0.1:8085/sandbox/prometheus/api/v1/series'\
+          \ \\\n  --data-urlencode 'match[]=up{job=\"prometheus\"}'\n"
+  /api/v1/labels:
+    post:
+      operationId: labels
+      summary: List matching label names
+      tags:
+      - Metadata
+      description: List matching label names using the documented values. The replay response was captured
+        from native Prometheus 3.5.0. POST accepts URL-encoded fields; no path parameters are needed.
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/LabelsRequest'
+            example: &id008
+              match[]:
+              - up{job="prometheus"}
+            encoding:
+              match[]:
+                style: form
+                explode: true
+      responses:
+        '200':
+          description: Native capture replayed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LabelsResponse'
+              example: &id007
+                status: success
+                data:
+                - __name__
+                - instance
+                - job
+        '400':
+          description: Invalid or missing inputs.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Missing or invalid laboratory credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unsupported sandbox input or failed query execution.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          description: Query timeout or upstream unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-codeSamples:
+      - lang: Shell
+        label: curl local gateway
+        source: "curl --fail-with-body -sS \\\n  -u 'labreader:prometheus-lab-demo' \\\n  'http://127.0.0.1:8085/sandbox/prometheus/api/v1/labels'\
+          \ \\\n  --data-urlencode 'match[]=up{job=\"prometheus\"}'\n"
+  /api/v1/format_query:
+    post:
+      operationId: format_query
+      summary: Format a PromQL expression
+      tags:
+      - Queries
+      description: Format a PromQL expression using the documented values. The replay response was captured
+        from native Prometheus 3.5.0. POST accepts URL-encoded fields; no path parameters are needed.
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FormatRequest'
+            example: &id010
+              query: sum( up{job="prometheus"} )
+      responses:
+        '200':
+          description: Native capture replayed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FormatResponse'
+              example: &id009
+                status: success
+                data: sum(up{job="prometheus"})
+        '400':
+          description: Invalid or missing inputs.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Missing or invalid laboratory credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unsupported sandbox input or failed query execution.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          description: Query timeout or upstream unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-codeSamples:
+      - lang: Shell
+        label: curl local gateway
+        source: "curl --fail-with-body -sS \\\n  -u 'labreader:prometheus-lab-demo' \\\n  'http://127.0.0.1:8085/sandbox/prometheus/api/v1/format_query'\
+          \ \\\n  --data-urlencode 'query=sum( up{job=\"prometheus\"} )'\n"
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      required:
+      - status
+      - errorType
+      - error
+      properties:
+        status:
+          type: string
+          enum:
+          - error
+        errorType:
+          type: string
+        error:
+          type: string
+    MetricLabels:
+      type: object
+      additionalProperties:
+        type: string
+    SamplePair:
+      type: array
+      minItems: 2
+      maxItems: 2
+      description: A Unix timestamp followed by a string-encoded sample value.
+      items:
+        oneOf:
+        - type: number
+        - type: string
+    VectorSeries:
+      type: object
+      required:
+      - metric
+      - value
+      properties:
+        metric:
+          $ref: '#/components/schemas/MetricLabels'
+        value:
+          $ref: '#/components/schemas/SamplePair'
+    MatrixSeries:
+      type: object
+      required:
+      - metric
+      - values
+      properties:
+        metric:
+          $ref: '#/components/schemas/MetricLabels'
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/SamplePair'
+    QueryResponse:
+      type: object
+      required:
+      - status
+      - data
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        data:
+          type: object
+          required:
+          - resultType
+          - result
+          properties:
+            resultType:
+              type: string
+              enum:
+              - vector
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/VectorSeries'
+        warnings:
+          type: array
+          items:
+            type: string
+        infos:
+          type: array
+          items:
+            type: string
+      example: *id001
+    QueryRequest:
+      type: object
+      required:
+      - query
+      - time
+      properties:
+        query:
+          type: string
+          description: PromQL expression.
+          example: vector(1)
+        time:
+          type: string
+          description: Unix timestamp in seconds or RFC3339.
+          example: '1791187200'
+      example: *id002
+    RangeResponse:
+      type: object
+      required:
+      - status
+      - data
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        data:
+          type: object
+          required:
+          - resultType
+          - result
+          properties:
+            resultType:
+              type: string
+              enum:
+              - matrix
+            result:
+              type: array
+              items:
+                $ref: '#/components/schemas/MatrixSeries'
+        warnings:
+          type: array
+          items:
+            type: string
+        infos:
+          type: array
+          items:
+            type: string
+      example: *id003
+    RangeRequest:
+      type: object
+      required:
+      - query
+      - start
+      - end
+      - step
+      properties:
+        query:
+          type: string
+          description: PromQL expression.
+          example: vector(1)
+        start:
+          type: string
+          description: Inclusive start timestamp.
+          example: '1791187200'
+        end:
+          type: string
+          description: Inclusive end timestamp.
+          example: '1791187230'
+        step:
+          type: string
+          description: Resolution, for example 15s.
+          example: 15s
+      example: *id004
+    SeriesResponse:
+      type: object
+      required:
+      - status
+      - data
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/MetricLabels'
+        warnings:
+          type: array
+          items:
+            type: string
+        infos:
+          type: array
+          items:
+            type: string
+      example: *id005
+    SeriesRequest:
+      type: object
+      required:
+      - match[]
+      properties:
+        match[]:
+          type: array
+          items:
+            type: string
+          description: Repeated series selectors.
+          example:
+          - up{job="prometheus"}
+      example: *id006
+    LabelsResponse:
+      type: object
+      required:
+      - status
+      - data
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        data:
+          type: array
+          items:
+            type: string
+        warnings:
+          type: array
+          items:
+            type: string
+        infos:
+          type: array
+          items:
+            type: string
+      example: *id007
+    LabelsRequest:
+      type: object
+      required:
+      - match[]
+      properties:
+        match[]:
+          type: array
+          items:
+            type: string
+          description: Repeated series selectors.
+          example:
+          - up{job="prometheus"}
+      example: *id008
+    FormatResponse:
+      type: object
+      required:
+      - status
+      - data
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+        data:
+          type: string
+        warnings:
+          type: array
+          items:
+            type: string
+        infos:
+          type: array
+          items:
+            type: string
+      example: *id009
+    FormatRequest:
+      type: object
+      required:
+      - query
+      properties:
+        query:
+          type: string
+          description: PromQL expression.
+          example: sum( up{job="prometheus"} )
+      example: *id010
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: 'Laboratory gateway only: labreader / prometheus-lab-demo. Use HTTPS outside loopback.'
+tags:
+- name: Queries
+  description: Evaluate and format PromQL expressions.
+- name: Metadata
+  description: Find time series and label names.

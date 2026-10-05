@@ -1,0 +1,13 @@
+{
+  "source": "Native Prometheus 3.5.0",
+  "method": "POST",
+  "path": "/api/v1/format_query",
+  "request": {
+    "query": "sum( up{job=\"prometheus\"} )"
+  },
+  "status": 200,
+  "payload": {
+    "status": "success",
+    "data": "sum(up{job=\"prometheus\"})"
+  }
+}

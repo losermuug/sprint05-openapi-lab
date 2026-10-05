@@ -1,0 +1,11 @@
+
+> sprint05-openapi-lab@1.0.0 build:docs
+> node scripts/build-docs.mjs
+
+Prerendering docs
+
+🎉 bundled successfully in: public/redoc/index.html (119 KiB) [⏱ 1ms].
+Prerendering docs
+
+🎉 bundled successfully in: public/redoc/corgly.html (96 KiB) [⏱ 1ms].
+Built 13 local assets and the Cloudflare Worker.

@@ -1,0 +1,17 @@
+{
+  "source": "Native Prometheus 3.5.0",
+  "method": "POST",
+  "path": "/api/v1/labels",
+  "request": {
+    "match[]": "up{job=\"prometheus\"}"
+  },
+  "status": 200,
+  "payload": {
+    "status": "success",
+    "data": [
+      "__name__",
+      "instance",
+      "job"
+    ]
+  }
+}

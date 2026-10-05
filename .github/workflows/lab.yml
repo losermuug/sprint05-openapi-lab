@@ -1,0 +1,30 @@
+name: OpenAPI and executable samples
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  lab:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: pip install -r requirements.txt
+      - run: npm run lint
+      - run: npm run build:docs
+      - name: Execute all samples and validate payloads
+        run: |
+          npm start > /tmp/swpd-lab-server.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:8085/health; then break; fi
+            sleep 1
+          done
+          python tests/verify_lab.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lab-evidence
+          path: docs/evidence/

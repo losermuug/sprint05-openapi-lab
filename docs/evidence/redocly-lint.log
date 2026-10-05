@@ -1,0 +1,16 @@
+
+> sprint05-openapi-lab@1.0.0 lint
+> redocly lint docs/openapi/openapi.yaml docs/openapi/corgly.yaml
+
+No configurations were provided -- using built in recommended configuration by default.
+
+validating docs/openapi/openapi.yaml...
+docs/openapi/openapi.yaml: validated in 38ms
+
+No configurations were provided -- using built in recommended configuration by default.
+
+validating docs/openapi/corgly.yaml...
+docs/openapi/corgly.yaml: validated in 24ms
+
+Woohoo! Your API descriptions are valid. 🎉
+

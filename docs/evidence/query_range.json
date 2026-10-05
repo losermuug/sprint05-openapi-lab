@@ -1,0 +1,37 @@
+{
+  "source": "Native Prometheus 3.5.0",
+  "method": "POST",
+  "path": "/api/v1/query_range",
+  "request": {
+    "query": "vector(1)",
+    "start": "1791187200",
+    "end": "1791187230",
+    "step": "15s"
+  },
+  "status": 200,
+  "payload": {
+    "status": "success",
+    "data": {
+      "resultType": "matrix",
+      "result": [
+        {
+          "metric": {},
+          "values": [
+            [
+              1791187200,
+              "1"
+            ],
+            [
+              1791187215,
+              "1"
+            ],
+            [
+              1791187230,
+              "1"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

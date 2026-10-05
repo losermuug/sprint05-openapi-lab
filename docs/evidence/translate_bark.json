@@ -1,0 +1,13 @@
+{
+  "source": "Local Corg.ly training mock",
+  "status": 200,
+  "payload": {
+    "pet_id": "corgi_98231",
+    "translation_id": "bark_einstein_001",
+    "meaning": "I want to play",
+    "language": "en",
+    "confidence": 0.93,
+    "mode": "mock",
+    "model": "deterministic-lab-fixture"
+  }
+}

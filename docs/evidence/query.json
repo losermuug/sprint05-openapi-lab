@@ -1,0 +1,25 @@
+{
+  "source": "Native Prometheus 3.5.0",
+  "method": "POST",
+  "path": "/api/v1/query",
+  "request": {
+    "query": "vector(1)",
+    "time": "1791187200"
+  },
+  "status": 200,
+  "payload": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {},
+          "value": [
+            1791187200,
+            "1"
+          ]
+        }
+      ]
+    }
+  }
+}

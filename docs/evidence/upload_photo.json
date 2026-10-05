@@ -1,0 +1,14 @@
+{
+  "source": "Local Corg.ly training mock",
+  "status": 201,
+  "payload": {
+    "pet_id": "corgi_98231",
+    "pet_name": "Einstein",
+    "photo_id": "photo_einstein_001",
+    "filename": "einstein.png",
+    "content_type": "image/png",
+    "size_bytes": 92,
+    "stored": false,
+    "mode": "mock"
+  }
+}

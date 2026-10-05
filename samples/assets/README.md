@@ -1,0 +1,1 @@
+The PNG is a 16 x 16 solid-color transport fixture. The WAV is a 0.25-second generated 440 Hz tone, not a real bark. They verify multipart transport only. The mock does not perform photo storage or acoustic inference.

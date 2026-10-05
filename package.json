@@ -1,0 +1,16 @@
+{
+  "name": "sprint05-openapi-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "redocly lint docs/openapi/openapi.yaml docs/openapi/corgly.yaml",
+    "build:docs": "node scripts/build-docs.mjs",
+    "start": "node sandbox/server.mjs",
+    "verify": "python3 tests/verify_lab.py"
+  },
+  "devDependencies": {
+    "@redocly/cli": "2.9.0",
+    "swagger-ui-dist": "5.29.0"
+  }
+}

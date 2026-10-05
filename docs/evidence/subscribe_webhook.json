@@ -1,0 +1,16 @@
+{
+  "source": "Local Corg.ly training mock",
+  "status": 201,
+  "payload": {
+    "subscription_id": "hook_einstein_001",
+    "pet_id": "corgi_98231",
+    "callback_url": "https://swpd-sprint05-openapi-lab.wiry-cup-6698.chatgpt.site/callbacks/einstein",
+    "events": [
+      "pet.photo.uploaded",
+      "bark.translated"
+    ],
+    "status": "active",
+    "delivery_enabled": false,
+    "mode": "mock"
+  }
+}

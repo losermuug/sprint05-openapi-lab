@@ -1,0 +1,14 @@
+{
+  "source": "Native Prometheus 3.5.0",
+  "method": "POST",
+  "path": "/api/v1/query",
+  "request": {
+    "query": "sum("
+  },
+  "status": 400,
+  "payload": {
+    "status": "error",
+    "errorType": "bad_data",
+    "error": "invalid parameter \"query\": 1:5: parse error: unclosed left parenthesis"
+  }
+}
