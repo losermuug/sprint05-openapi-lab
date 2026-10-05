@@ -1,6 +1,6 @@
 {
-  "executed_at_utc": "2026-10-05T11:28:17.236944+00:00",
-  "base_url": "http://127.0.0.1:8085",
+  "executed_at_utc": "2026-10-05T11:47:51.838550+00:00",
+  "base_url": "https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site",
   "passed": 43,
   "failed": 0,
   "checks": [
@@ -9,7 +9,7 @@
       "status": "PASS"
     },
     {
-      "name": "HTTP query status",
+      "name": "HTTP query status and captured payload",
       "status": "PASS"
     },
     {
@@ -21,7 +21,7 @@
       "status": "PASS"
     },
     {
-      "name": "HTTP query_range status",
+      "name": "HTTP query_range status and captured payload",
       "status": "PASS"
     },
     {
@@ -33,7 +33,7 @@
       "status": "PASS"
     },
     {
-      "name": "HTTP series status",
+      "name": "HTTP series status and captured payload",
       "status": "PASS"
     },
     {
@@ -45,7 +45,7 @@
       "status": "PASS"
     },
     {
-      "name": "HTTP labels status",
+      "name": "HTTP labels status and captured payload",
       "status": "PASS"
     },
     {
@@ -57,7 +57,7 @@
       "status": "PASS"
     },
     {
-      "name": "HTTP format_query status",
+      "name": "HTTP format_query status and captured payload",
       "status": "PASS"
     },
     {

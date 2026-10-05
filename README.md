@@ -55,11 +55,11 @@ Corg.ly бол lab mock. Файлыг хадгалахгүй, bark-ийн утг
 
 ## Нийтийн байршуулалт
 
-Swagger UI: https://swpd-sprint05-openapi-lab.wiry-cup-6698.chatgpt.site/swagger/
+Swagger UI: https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site/swagger/
 
-Redoc: https://swpd-sprint05-openapi-lab.wiry-cup-6698.chatgpt.site/redoc/
+Redoc: https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site/redoc/
 
-Corg.ly Redoc: https://swpd-sprint05-openapi-lab.wiry-cup-6698.chatgpt.site/redoc/corgly.html
+Corg.ly Redoc: https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site/redoc/corgly.html
 
 Deployment-ийн баталгаажсан мэдээллийг docs/evidence/deployment.json-д хадгална. Sites source repository-д source commit хадгалагдана. GitHub Actions workflow-ийн эх код бэлэн; GitHub дээр run хийсэн гэж батлаагүй. CI-ийн ижил командыг локал орчинд ажиллуулсан.
 

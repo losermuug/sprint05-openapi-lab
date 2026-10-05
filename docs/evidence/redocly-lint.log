@@ -5,12 +5,12 @@
 No configurations were provided -- using built in recommended configuration by default.
 
 validating docs/openapi/openapi.yaml...
-docs/openapi/openapi.yaml: validated in 38ms
+docs/openapi/openapi.yaml: validated in 36ms
 
 No configurations were provided -- using built in recommended configuration by default.
 
 validating docs/openapi/corgly.yaml...
-docs/openapi/corgly.yaml: validated in 24ms
+docs/openapi/corgly.yaml: validated in 22ms
 
 Woohoo! Your API descriptions are valid. 🎉
 

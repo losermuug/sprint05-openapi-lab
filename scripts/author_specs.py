@@ -5,7 +5,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT / 'docs/evidence'
-ORIGIN = 'https://swpd-sprint05-openapi-lab.wiry-cup-6698.chatgpt.site'
+ORIGIN = 'https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site'
 
 def ref(name):
     return {'$ref': f'#/components/schemas/{name}'}

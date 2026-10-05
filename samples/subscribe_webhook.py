@@ -7,7 +7,7 @@ base_url = os.getenv('CORGLY_BASE_URL', 'http://127.0.0.1:8085').rstrip('/')
 auth_token = os.getenv('CORGLY_TOKEN', 'corgly-lab-einstein-2026')
 callback_url = os.getenv(
     'CORGLY_CALLBACK_URL',
-    'https://swpd-sprint05-openapi-lab.wiry-cup-6698.chatgpt.site/callbacks/einstein',
+    'https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site/callbacks/einstein',
 )
 webhook_payload = {
     'pet_id': 'corgi_98231',
