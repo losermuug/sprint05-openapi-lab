@@ -1,10 +1,11 @@
 {
-  "source": "Local Corg.ly training mock",
+  "source": "Vercel production Corg.ly training mock",
+  "captured_at_utc": "2026-10-05T12:02:45.399124+00:00",
   "status": 201,
   "payload": {
     "subscription_id": "hook_einstein_001",
     "pet_id": "corgi_98231",
-    "callback_url": "https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site/callbacks/einstein",
+    "callback_url": "https://sprint05-openapi-lab.vercel.app/callbacks/einstein",
     "events": [
       "pet.photo.uploaded",
       "bark.translated"

@@ -188,7 +188,7 @@ paths:
               $ref: '#/components/schemas/WebhookRequest'
             example: &id006
               pet_id: corgi_98231
-              callback_url: https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site/callbacks/einstein
+              callback_url: https://sprint05-openapi-lab.vercel.app/callbacks/einstein
               events:
               - pet.photo.uploaded
               - bark.translated
@@ -202,7 +202,7 @@ paths:
               example: &id005
                 subscription_id: hook_einstein_001
                 pet_id: corgi_98231
-                callback_url: https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site/callbacks/einstein
+                callback_url: https://sprint05-openapi-lab.vercel.app/callbacks/einstein
                 events:
                 - pet.photo.uploaded
                 - bark.translated
@@ -233,7 +233,7 @@ paths:
         source: "\"\"\"Register the lab callback; the mock does not send webhook deliveries.\"\"\"\nimport\
           \ json\nimport os\nimport requests\n\nbase_url = os.getenv('CORGLY_BASE_URL', 'http://127.0.0.1:8085').rstrip('/')\n\
           auth_token = os.getenv('CORGLY_TOKEN', 'corgly-lab-einstein-2026')\ncallback_url = os.getenv(\n\
-          \    'CORGLY_CALLBACK_URL',\n    'https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site/callbacks/einstein',\n\
+          \    'CORGLY_CALLBACK_URL',\n    'https://sprint05-openapi-lab.vercel.app/callbacks/einstein',\n\
           )\nwebhook_payload = {\n    'pet_id': 'corgi_98231',\n    'callback_url': callback_url,\n  \
           \  'events': ['pet.photo.uploaded', 'bark.translated'],\n}\nwebhook_response = requests.post(\n\
           \    f'{base_url}/v1/webhooks/subscribe',\n    headers={'Authorization': f'Bearer {auth_token}'},\n\
@@ -396,7 +396,7 @@ components:
           type: string
           format: uri
           pattern: ^https://
-          example: https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site/callbacks/einstein
+          example: https://sprint05-openapi-lab.vercel.app/callbacks/einstein
         events:
           type: array
           minItems: 1

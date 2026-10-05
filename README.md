@@ -48,20 +48,20 @@ Corg.ly бол lab mock. Файлыг хадгалахгүй, bark-ийн утг
 - docs/audit-scorecard.md — бүх 8 жишээний Bhatti аудит, 4.90/5 буюу 98%
 - docs/decision-report.md — яг 100 үгтэй renderer сонголт
 - samples/ — 5 curl ба 3 бүрэн Python жишээ, fixture файлууд
-- sandbox/ — локал ба public Worker-ийн shared API handler
+- sandbox/ — локал, Vercel болон public Worker-ийн shared API handler
 - public/ — Swagger UI, Redoc, YAML болон унших баримт
 - tests/verify_lab.py — executable samples, schema ба сөрөг хувилбарууд
 - .github/workflows/lab.yml — яг энэ шалгалтыг push/PR үед гүйцэтгэх CI
 
 ## Нийтийн байршуулалт
 
-Swagger UI: https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site/swagger/
+Swagger UI: https://sprint05-openapi-lab.vercel.app/swagger/
 
-Redoc: https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site/redoc/
+Redoc: https://sprint05-openapi-lab.vercel.app/redoc/
 
-Corg.ly Redoc: https://swpd-sprint05-openapi-lab.ganzorigm04.chatgpt.site/redoc/corgly.html
+Corg.ly Redoc: https://sprint05-openapi-lab.vercel.app/redoc/corgly.html
 
-Deployment-ийн баталгаажсан мэдээллийг docs/evidence/deployment.json-д хадгална. Sites source repository-д source commit хадгалагдана. GitHub Actions workflow-ийн эх код бэлэн; GitHub дээр run хийсэн гэж батлаагүй. CI-ийн ижил командыг локал орчинд ажиллуулсан.
+Vercel production deployment-ийн мэдээллийг docs/evidence/vercel-deployment.json-д хадгална. Vercel тохиргоо vercel.json, API entry point api/lab.js-д байна. Өмнөх Sites байршуулалтын мэдээлэл docs/evidence/deployment.json-д хадгалагдсан. GitHub Actions workflow-ийн эх код бэлэн; GitHub дээр run хийсэн гэж батлаагүй. CI-ийн ижил командыг локал орчинд ажиллуулсан.
 
 ## Эх сурвалж
 
@@ -74,3 +74,12 @@ Redocly CLI lint: https://redocly.com/docs/cli/commands/lint
 Redoc Community: https://redocly.com/docs/redoc
 
 Номын хуудсын заалтыг багшийн PDF-д өгсөн лавлагаагаар ашигласан; номын бүтэн эхийг энэ багцад оруулаагүй.
+
+## Vercel дээр дахин байрлуулах
+
+```sh
+npx vercel link --project sprint05-openapi-lab --scope losermuugs-projects
+npx vercel deploy --prod --scope losermuugs-projects
+```
+
+Vercel дээр статик public/ баримт болон Node.js Function бүхий ижил sandbox ажиллана.

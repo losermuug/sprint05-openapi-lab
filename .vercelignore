@@ -1,0 +1,8 @@
+.git
+.openai
+.sites-runtime
+node_modules
+dist
+.venv
+__pycache__
+.env*
