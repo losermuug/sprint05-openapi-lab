@@ -1,0 +1,15 @@
+{
+  "provider": "Vercel",
+  "project_id": "prj_wGoxSG4peyV8ECG7mnKdfYJeZsPX",
+  "org_id": "team_HkjIostT8UVhZj5GQ1LaY2Fc",
+  "project_name": "sprint05-openapi-lab",
+  "deployment_id": "dpl_Dz9UTjuReJ2Y6H713PNYh48Jp75S",
+  "deployment_url": "https://sprint05-openapi-iiq159pq6-losermuugs-projects.vercel.app",
+  "production_url": "https://sprint05-openapi-lab.vercel.app",
+  "inspector_url": "https://vercel.com/losermuugs-projects/sprint05-openapi-lab/Dz9UTjuReJ2Y6H713PNYh48Jp75S",
+  "target": "production",
+  "status": "READY",
+  "commit_sha": "7b694a5c95c6ac9b7feac5ccc94a4cf8ed159baa",
+  "runtime": "Node.js Vercel Function plus static documentation",
+  "verification": "43 passed, 0 failed; Swagger browser Try it out returned 200"
+}

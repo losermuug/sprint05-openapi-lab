@@ -52,6 +52,8 @@ Corg.ly бол lab mock. Файлыг хадгалахгүй, bark-ийн утг
 - public/ — Swagger UI, Redoc, YAML болон унших баримт
 - tests/verify_lab.py — executable samples, schema ба сөрөг хувилбарууд
 - .github/workflows/lab.yml — яг энэ шалгалтыг push/PR үед гүйцэтгэх CI
+- reports/week05 lab.docx — өгсөн Week 04 загвараар бичсэн тайлан
+- docs/submission-checklist.md — багшид өгөх материалын жагсаалт
 
 ## Нийтийн байршуулалт
 
