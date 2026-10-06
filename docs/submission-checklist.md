@@ -1,5 +1,7 @@
 # Sprint 05 submission checklist
 
+Repository: https://github.com/losermuug/sprint05-openapi-lab
+
 - Source: sandbox/, api/, scripts/, tests/, package.json and package-lock.json.
 - Main OpenAPI: docs/openapi/openapi.yaml (OpenAPI 3.0.3, five Prometheus paths).
 - UE-5 OpenAPI: docs/openapi/corgly.yaml and three complete Python samples in samples/.

@@ -63,7 +63,7 @@ Redoc: https://sprint05-openapi-lab.vercel.app/redoc/
 
 Corg.ly Redoc: https://sprint05-openapi-lab.vercel.app/redoc/corgly.html
 
-Vercel production deployment-ийн мэдээллийг docs/evidence/vercel-deployment.json-д хадгална. Vercel тохиргоо vercel.json, API entry point api/lab.js-д байна. Өмнөх Sites байршуулалтын мэдээлэл docs/evidence/deployment.json-д хадгалагдсан. GitHub Actions workflow-ийн эх код бэлэн; GitHub дээр run хийсэн гэж батлаагүй. CI-ийн ижил командыг локал орчинд ажиллуулсан.
+Vercel production deployment-ийн мэдээллийг docs/evidence/vercel-deployment.json-д хадгална. Vercel тохиргоо vercel.json, API entry point api/lab.js-д байна. Өмнөх Sites байршуулалтын мэдээлэл docs/evidence/deployment.json-д хадгалагдсан. GitHub Actions workflow-ийг ажиллуулах хүсэлт үүсгэсэн. GitHub account нь billing issue-ээс болж locked тул job эхлээгүй. CI-ийн ижил командыг локал орчинд ажиллуулж 43 шалгалт давсан; GitHub дээр амжилттай run болсон гэж батлаагүй.
 
 ## Эх сурвалж
 
@@ -85,3 +85,17 @@ npx vercel deploy --prod --scope losermuugs-projects
 ```
 
 Vercel дээр статик public/ баримт болон Node.js Function бүхий ижил sandbox ажиллана.
+
+## GitHub submission
+
+Repository: https://github.com/losermuug/sprint05-openapi-lab
+
+OpenAPI: https://github.com/losermuug/sprint05-openapi-lab/blob/main/docs/openapi/openapi.yaml
+
+Report: https://github.com/losermuug/sprint05-openapi-lab/blob/main/reports/week05%20lab.docx
+
+Actions: https://github.com/losermuug/sprint05-openapi-lab/actions
+
+CI run: https://github.com/losermuug/sprint05-openapi-lab/actions/runs/37477474808
+
+Төлөв: GitHub billing account lock-оос болж job эхлээгүй. Нотолгоо: docs/evidence/github-ci.json. Account lock шийдэгдсэний дараа Actions → OpenAPI and executable samples → Run workflow ашиглана.
