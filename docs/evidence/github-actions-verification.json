@@ -1,0 +1,185 @@
+{
+  "executed_at_utc": "2026-10-06T14:28:31.287556+00:00",
+  "base_url": "http://127.0.0.1:8085",
+  "passed": 43,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Executable curl query and schema",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP query status and captured payload",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP query rejects missing auth",
+      "status": "PASS"
+    },
+    {
+      "name": "Executable curl query_range and schema",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP query_range status and captured payload",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP query_range rejects missing auth",
+      "status": "PASS"
+    },
+    {
+      "name": "Executable curl series and schema",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP series status and captured payload",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP series rejects missing auth",
+      "status": "PASS"
+    },
+    {
+      "name": "Executable curl labels and schema",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP labels status and captured payload",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP labels rejects missing auth",
+      "status": "PASS"
+    },
+    {
+      "name": "Executable curl format_query and schema",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP format_query status and captured payload",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP format_query rejects missing auth",
+      "status": "PASS"
+    },
+    {
+      "name": "Executable Python upload_photo and schema",
+      "status": "PASS"
+    },
+    {
+      "name": "Corg.ly upload_photo rejects missing auth",
+      "status": "PASS"
+    },
+    {
+      "name": "Executable Python translate_bark and schema",
+      "status": "PASS"
+    },
+    {
+      "name": "Corg.ly translate_bark rejects missing auth",
+      "status": "PASS"
+    },
+    {
+      "name": "Executable Python subscribe_webhook and schema",
+      "status": "PASS"
+    },
+    {
+      "name": "Corg.ly subscribe_webhook rejects missing auth",
+      "status": "PASS"
+    },
+    {
+      "name": "Native bad PromQL capture matches sandbox",
+      "status": "PASS"
+    },
+    {
+      "name": "Replay rejects unsupported input",
+      "status": "PASS"
+    },
+    {
+      "name": "Photo rejects unsupported media type",
+      "status": "PASS"
+    },
+    {
+      "name": "Audio rejects malformed WAV",
+      "status": "PASS"
+    },
+    {
+      "name": "Webhook requires HTTPS",
+      "status": "PASS"
+    },
+    {
+      "name": "Upload rejects oversized body",
+      "status": "PASS"
+    },
+    {
+      "name": "/api/v1/query has body and example",
+      "status": "PASS"
+    },
+    {
+      "name": "/api/v1/query documents success and errors",
+      "status": "PASS"
+    },
+    {
+      "name": "/api/v1/query_range has body and example",
+      "status": "PASS"
+    },
+    {
+      "name": "/api/v1/query_range documents success and errors",
+      "status": "PASS"
+    },
+    {
+      "name": "/api/v1/series has body and example",
+      "status": "PASS"
+    },
+    {
+      "name": "/api/v1/series documents success and errors",
+      "status": "PASS"
+    },
+    {
+      "name": "/api/v1/labels has body and example",
+      "status": "PASS"
+    },
+    {
+      "name": "/api/v1/labels documents success and errors",
+      "status": "PASS"
+    },
+    {
+      "name": "/api/v1/format_query has body and example",
+      "status": "PASS"
+    },
+    {
+      "name": "/api/v1/format_query documents success and errors",
+      "status": "PASS"
+    },
+    {
+      "name": "/pets/upload-photo has body and example",
+      "status": "PASS"
+    },
+    {
+      "name": "/pets/upload-photo documents success and errors",
+      "status": "PASS"
+    },
+    {
+      "name": "/audio/translate-bark has body and example",
+      "status": "PASS"
+    },
+    {
+      "name": "/audio/translate-bark documents success and errors",
+      "status": "PASS"
+    },
+    {
+      "name": "/webhooks/subscribe has body and example",
+      "status": "PASS"
+    },
+    {
+      "name": "/webhooks/subscribe documents success and errors",
+      "status": "PASS"
+    }
+  ],
+  "not_fault_injected": [
+    "500",
+    "503"
+  ],
+  "scope": "Training sandbox; native Prometheus captures are stored separately."
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "repository_url": "https://github.com/losermuug/sprint05-openapi-lab",
+    "visibility": "PUBLIC",
+    "branch": "main",
+    "submission_commit": "a118069d86ddf5373f6df870e06a02e4df38204b",
+    "workflow": ".github/workflows/lab.yml",
+    "run_id": 37477474808,
+    "run_url": "https://github.com/losermuug/sprint05-openapi-lab/actions/runs/37477474808",
+    "event": "workflow_dispatch",
+    "conclusion": "failure",
+    "job_steps_executed": 0,
+    "blocker": "The job was not started because your account is locked due to a billing issue.",
+    "local_and_vercel_checks": 43,
+    "updated_at_utc": "2026-10-06T14:19:27.178507+00:00"
+  }
+]

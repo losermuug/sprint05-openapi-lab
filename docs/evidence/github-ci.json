@@ -2,14 +2,140 @@
   "repository_url": "https://github.com/losermuug/sprint05-openapi-lab",
   "visibility": "PUBLIC",
   "branch": "main",
-  "submission_commit": "a118069d86ddf5373f6df870e06a02e4df38204b",
+  "tested_commit": "0ec854122f0d37199de34aebc63ccc49f85ded3c",
   "workflow": ".github/workflows/lab.yml",
-  "run_id": 37477474808,
-  "run_url": "https://github.com/losermuug/sprint05-openapi-lab/actions/runs/37477474808",
+  "run_id": 37478881291,
+  "run_url": "https://github.com/losermuug/sprint05-openapi-lab/actions/runs/37478881291",
   "event": "workflow_dispatch",
-  "conclusion": "failure",
-  "job_steps_executed": 0,
-  "blocker": "The job was not started because your account is locked due to a billing issue.",
-  "local_and_vercel_checks": 43,
-  "updated_at_utc": "2026-10-06T14:19:27.178507+00:00"
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "completedAt": "2026-10-06T14:28:35Z",
+      "conclusion": "success",
+      "databaseId": 112321498265,
+      "name": "lab",
+      "startedAt": "2026-10-06T14:28:04Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-06T14:28:06Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-06T14:28:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-06T14:28:07Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-06T14:28:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-06T14:28:10Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 3,
+          "startedAt": "2026-10-06T14:28:07Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-06T14:28:10Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@v5",
+          "number": 4,
+          "startedAt": "2026-10-06T14:28:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-06T14:28:20Z",
+          "conclusion": "success",
+          "name": "Run npm ci",
+          "number": 5,
+          "startedAt": "2026-10-06T14:28:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-06T14:28:24Z",
+          "conclusion": "success",
+          "name": "Run pip install -r requirements.txt",
+          "number": 6,
+          "startedAt": "2026-10-06T14:28:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-06T14:28:26Z",
+          "conclusion": "success",
+          "name": "Run npm run lint",
+          "number": 7,
+          "startedAt": "2026-10-06T14:28:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-06T14:28:29Z",
+          "conclusion": "success",
+          "name": "Run npm run build:docs",
+          "number": 8,
+          "startedAt": "2026-10-06T14:28:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-06T14:28:31Z",
+          "conclusion": "success",
+          "name": "Execute all samples and validate payloads",
+          "number": 9,
+          "startedAt": "2026-10-06T14:28:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-06T14:28:32Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 10,
+          "startedAt": "2026-10-06T14:28:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-06T14:28:32Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@v5",
+          "number": 18,
+          "startedAt": "2026-10-06T14:28:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-06T14:28:33Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 19,
+          "startedAt": "2026-10-06T14:28:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-06T14:28:33Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 20,
+          "startedAt": "2026-10-06T14:28:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-06T14:28:33Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 21,
+          "startedAt": "2026-10-06T14:28:33Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/losermuug/sprint05-openapi-lab/actions/runs/37478881291/job/112321498265"
+    }
+  ],
+  "checks_passed": 43,
+  "checks_failed": 0,
+  "verification_artifact": "docs/evidence/github-actions-verification.json",
+  "updated_at_utc": "2026-10-06T14:29:38.904293+00:00"
 }
